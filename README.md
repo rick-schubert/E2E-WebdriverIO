@@ -1,18 +1,12 @@
-# READ ME
+# Note
+I am using Windows 10 at my home computer alongside NodeJS 8.7.0 which caused some initial trouble during startup. This is the reason why I decided to include the dependency `node-fibers` as I had to rebuild it. Furthermore, the host "0.0.0.0" had to be changed to "localhost" for usage in Windows 10. (In `wdio.conf.js`)
 
-Please clone (don't fork) this repository to your own GitHub account, share the link with us once you're done.
+I had a lot of fun doing this task and was quite impressed by how well-chose the selector names are and how many exist. This made testing a breeze!
 
-To set this up, please run the following commands in your terminal
+# How to run
+- Start Serverless Selenium (for example with `java -jar -Dwebdriver.gecko.driver=./geckodriver selenium-server-standalone-3.5.3.jar`)
+- Start the test suite with `npm run test`
 
-    $ npm install
-
-You should be ready to start writing and running tests
-
-Once that's done, run ```npm test``` to kick off the test
-
-Required:
- - Use only ES6 syntax (including array helpers where/when/if needed)
- - Create as many page objects as you feel are needed
- - You can create a utility file if you wish to do so
- - Keep in mind that this is RWD so make use of the selectors so that they are compatible with both Desktop and Mobile versions     
-
+# Folder organisation
+- `features/step_definitions/` describes which class methods are called on which step
+- `pageObjects` contains several ES modules/classes containing several reusable methods

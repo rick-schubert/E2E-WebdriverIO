@@ -2,10 +2,10 @@ Feature: Product -> add product to basket
   As a customer
   I would like to be able to search for a product and access to the product details
   So that I can add the product to my basket
-
+  
   Scenario: Example scenario
     When I am on the landing page
-    Then I can see logo in navigation bar
+    Then I can see logo in navigation bar    
 
   Scenario: Search for a product
     Given I am on the landing page
@@ -15,7 +15,6 @@ Feature: Product -> add product to basket
   Scenario: Access a product detail page
     Given I am on the landing page
     And I search for a random product
-    When I select a random product from the returned list
     Then I should be taken to the product detail page
 
   Scenario: Add a product to Basket

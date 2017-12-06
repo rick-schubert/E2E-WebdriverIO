@@ -1,7 +1,7 @@
 {
-  "name": "monty-e2e-exercise",
+  "name": "arcadia-e2e-exercise",
   "version": "1.0.0",
-  "description": "Monty E2E exercise",
+  "description": "Arcadia E2E exercise",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -20,6 +20,6 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js"
   },
-  "author": "Monty QA",
+  "author": "Rick Schubert",
   "license": "ISC"
 }
