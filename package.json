@@ -1,7 +1,7 @@
 {
-  "name": "arcadia-e2e-exercise",
+  "name": "e2e-javascript-webdriverio",
   "version": "1.0.0",
-  "description": "Arcadia E2E exercise",
+  "description": "E2E exercise using WebdriverIO and JavaScript ES6 syntax.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {

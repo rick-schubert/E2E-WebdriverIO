@@ -1,34 +1,45 @@
 import Page from "./parent.page"
 
+
 class ProductPage extends Page {
+
+    constructor() {
+        super()
+        this.availableSize = ".ProductSizes-item:not(.is-outOfStock)"
+        this.quantityOption = "#productQuantity > option"
+        this.addToBagButton = ".AddToBag"
+        this.addToBagModal = ".AddToBag-modal"
+        this.viewBagButton = ".AddToBagConfirm-viewBag"
+        this.continueButton = ".MiniBag-continueButton"
+    }
         
     selectAvailableSize () {
-        browser.waitForVisible(".ProductSizes-item:not(.is-outOfStock)")
-        browser.click(".ProductSizes-item:not(.is-outOfStock)")
+        browser.waitForVisible(this.availableSize)
+        browser.click(this.availableSize)
     }
     
     changeQuant () {
-        browser.waitForVisible("#productQuantity > option")
-        browser.click("#productQuantity > option")
+        browser.waitForVisible(this.quantityOption)
+        browser.click(this.quantityOption)
     }
     
     addToBag () {
-        browser.waitForVisible(".AddToBag")
-        browser.click(".AddToBag")
+        browser.waitForVisible(this.addToBagButton)
+        browser.click(this.addToBagButton)
     }
 
     isAddedToBag () {
-        return browser.waitForVisible(".AddToBag-modal")
+        return browser.waitForVisible(this.addToBagModal)
     }
         
     goToBag () {
-        browser.waitForVisible(".AddToBagConfirm-viewBag")
-        browser.click(".AddToBagConfirm-viewBag")
-        browser.waitForVisible(".MiniBag-continueButton")
+        browser.waitForVisible(this.viewBagButton)
+        browser.click(this.viewBagButton)
+        browser.waitForVisible(this.continueButton)
     }
     
     isProductPage() {
-        return browser.waitForVisible(".AddToBag")
+        return browser.waitForVisible(this.addToBagButton)
     }
 
 }

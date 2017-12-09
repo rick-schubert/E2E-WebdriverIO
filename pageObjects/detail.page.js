@@ -1,10 +1,17 @@
 import { config } from "./../wdio.conf.js"
 import Page from "./parent.page"
 
+
 class DetailPage extends Page {
+
+    constructor () {
+        super()
+        this.refineButton = ".Filters-refineButton"
+        this.searchTitle = ".PlpHeader-title"
+    }
         
     productExists () {
-        return browser.waitForExist(".ProductImages-image ", 7000)
+        return browser.waitForExist(this.productImage)
     }
 
     searchUrlWasApplied (product) {
@@ -12,12 +19,12 @@ class DetailPage extends Page {
     }
 
     selectProduct () {
-        browser.waitForVisible(".ProductImages-image")
-        browser.click(".ProductImages-image")
+        browser.waitForVisible(this.productImage)
+        browser.click(this.productImage)
     }
 
     filterButtonExists () {
-        return browser.waitForVisible(".Filters-refineButton")
+        return browser.waitForVisible(this.refineButton)
     }
 
     checkTitle (product) {

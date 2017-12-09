@@ -1,6 +1,15 @@
 import Page from "./parent.page"
 
+
 class Basket extends Page {
+
+    constructor () {
+        super()
+        this.deleteText = ".OrderProducts-deleteText"
+        this.deleteButton = ".OrderProducts-deleteButton"
+        this.modalButton = ".OrderProducts-modal > button"
+        this.emptyBag = ".MiniBag-emptyBag"
+    }
         
     checkQuantInBag (quant) {
         console.log(quant)
@@ -10,12 +19,12 @@ class Basket extends Page {
     }
 
     removefromBag () {
-        browser.waitForVisible(".OrderProducts-deleteText")
-        browser.click(".OrderProducts-deleteText")
-        browser.waitForVisible(".OrderProducts-deleteButton")
-        browser.click(".OrderProducts-deleteButton")
-        browser.waitForVisible(".OrderProducts-modal > button")
-        browser.click(".OrderProducts-modal > button") 
+        browser.waitForVisible(this.deleteText)
+        browser.click(this.deleteText)
+        browser.waitForVisible(this.deleteButton)
+        browser.click(this.deleteButton)
+        browser.waitForVisible(this.modalButton)
+        browser.click(this.modalButton) 
     }
 
     isBasketEmpty () {

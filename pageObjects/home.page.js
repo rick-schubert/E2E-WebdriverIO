@@ -1,6 +1,14 @@
 import Page from "./parent.page"
 
+
 class HomePage extends Page {
+
+    constructor () {
+        super()
+        this.searchIcon = ".Header-searchIcon"
+        this.searchBar = ".SearchBar-queryInput"
+        this.searchGoButton = ".SearchBar-iconParent"
+    }
     
     access () {
         browser.url('/')
@@ -11,16 +19,16 @@ class HomePage extends Page {
     }
     
     searchRandomProd (product) {
-        browser.waitForVisible(".Header-searchIcon")
-        browser.click(".Header-searchIcon")
-        browser.waitForVisible(".SearchBar-queryInput")
-        browser.setValue(".SearchBar-queryInput", product)
-        browser.waitForVisible(".SearchBar-iconParent")        
-        browser.click(".SearchBar-iconParent")
+        browser.waitForVisible(this.searchIcon)
+        browser.click(this.searchIcon)
+        browser.waitForVisible(this.searchBar)
+        browser.setValue(this.searchBar, product)
+        browser.waitForVisible(this.searchGoButton)        
+        browser.click(this.searchGoButton)
     }
     
     productExists () {
-        return browser.waitForExist(".ProductImages-image ", 7000)
+        return browser.waitForExist(this.productImage)
     }
 
 }
